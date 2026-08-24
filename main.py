@@ -1,6 +1,8 @@
 from uav import UAV , save_uavs_to_csv
 from task import Task , save_tasks_to_csv
 
+from priority_allocator import PriorityAllocator
+
 
 
 
@@ -16,12 +18,23 @@ def main():
     ]
 
     
+
+    
     print("====== UAV NETWORK ======")
     for uav in uavs:
         uav.display()
         print()
         
-        
+
+    allocator = PriorityAllocator()
+    
+    print("\n====== TIME SLOT ALLOCATION ======\n")
+    
+    selected_uav = allocator.allocate(uavs)
+    
+    print(f"\nTime slot allocated to UAV {selected_uav.id}")
+
+
     save_uavs_to_csv(uavs)
     
     tasks = Task.generate_tasks(10)
