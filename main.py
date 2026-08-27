@@ -20,25 +20,43 @@ def main():
     
     
     print("====== UAV NETWORK ======")
+
     for uav in uavs:
         uav.display()
         print()
-        
-
-    allocator = PriorityAllocator()
-    
-    print("\n====== TIME SLOT ALLOCATION ======\n")
-    
-    selected_uav = allocator.allocate(uavs)
-    
-    print(f"\nTime slot allocated to UAV {selected_uav.id}")
-
 
     save_uavs_to_csv(uavs)
-    
+
+    #generate tasks and save task
     tasks = Task.generate_tasks(10)
 
     save_tasks_to_csv(tasks)
+
+
+    #create allocator object
+    allocator = PriorityAllocator()
+    
+
+    
+    print(f"\n====== TAKS ALLOCATION ======\n")
+
+    for task in tasks:
+
+        print(f"--- Task {task.task_id} ---")
+
+        selected_uav = allocator.allocate(uavs, task)
+
+        if selected_uav is not None:
+            print(
+                f"\nTask {task.task_id} allocated "
+                f"to UAV {selected_uav.id}"
+                )
+        else:
+            print(
+                f"\nTask {task.task_id} could not be allocated "
+                f"because no UAV meets the deadline."
+            )
+    
 
     print("\n====== TASKS ======\n")
 

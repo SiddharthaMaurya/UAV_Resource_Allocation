@@ -16,7 +16,7 @@ class Task:
                 size_mb=random.randint(10, 100),
                 cpu_cycles=random.randint(1000, 10000),
                 priority=random.choice(priorities),
-                deadline=random.randint(1, 10)
+                deadline=random.randint(100, 1000)
             )
             tasks.append(task)
         return tasks

@@ -1,7 +1,7 @@
 import csv
 class UAV:
 
-
+    
     def __init__(self,uav_id, x , y , battery , cpu , bandwidth ,transmit_power, noise):
         self.id = uav_id
         self.x = x
@@ -11,6 +11,8 @@ class UAV:
         self.bandwidth = bandwidth
         self.transmit_power = transmit_power
         self.noise = noise
+        self.current_load = 0
+        
 
     def display(self):
         print(f"UAV: {self.id}")
