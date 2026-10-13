@@ -1,0 +1,274 @@
+====== UAV NETWORK ======
+UAV: 1
+position: (100, 200)
+battery: 90%
+cpu: 2.5 GHz 
+Bandwidth : 10 MHz
+
+UAV: 2
+position: (250, 180)
+battery: 75%
+cpu: 2.0 GHz 
+Bandwidth : 8 MHz
+
+UAV: 3
+position: (320, 90)
+battery: 60%
+cpu: 1.8 GHz 
+Bandwidth : 12 MHz
+
+UAV: 4
+position: (150, 300)
+battery: 95%
+cpu: 3.0 GHz 
+Bandwidth : 20 MHz
+
+UAV: 5
+position: (400, 250)
+battery: 50%
+cpu: 1.5 GHz 
+Bandwidth : 6 MHz
+
+
+====== TAKS ALLOCATION ======
+
+--- Task 1 ---
+UAV 1 -> Throughput: 2.12 Mbps, Distance: 100.00 m, Delay: 154.20 s, Utility: 1.2790
+UAV 2 -> Throughput: 3.00 Mbps, Distance: 53.85 m, Delay: 110.43 s, Utility: 2.0085
+UAV 3 -> Insufficient battery
+UAV 4 -> Throughput: 1.02 Mbps, Distance: 111.80 m, Delay: 317.12 s, Utility: 0.1666
+UAV 5 -> Insufficient battery
+UAV 2 -> Energy used: 50.3672 J, Remaining battery: 69.96%
+
+Task 1 allocated to UAV 2
+--- Task 2 ---
+UAV 1 -> Throughput: 2.12 Mbps, Distance: 100.00 m, Delay: 293.91 s, Utility: -inf
+UAV 2 -> Throughput: 3.00 Mbps, Distance: 53.85 m, Delay: 208.92 s, Utility: -inf
+UAV 3 -> Insufficient battery
+UAV 4 -> Throughput: 1.02 Mbps, Distance: 111.80 m, Delay: 608.02 s, Utility: -inf
+UAV 5 -> Insufficient battery
+
+Task 2 could not be allocated because no feasible UAV was available.
+--- Task 3 ---
+UAV 1 -> Throughput: 2.12 Mbps, Distance: 100.00 m, Delay: 301.49 s, Utility: 0.7123
+UAV 2 -> Throughput: 3.00 Mbps, Distance: 53.85 m, Delay: 214.28 s, Utility: 1.2567
+UAV 3 -> Insufficient battery
+UAV 4 -> Throughput: 1.02 Mbps, Distance: 111.80 m, Delay: 623.76 s, Utility: -0.2304
+UAV 5 -> Insufficient battery
+UAV 2 -> Energy used: 91.8394 J, Remaining battery: 60.78%
+
+Task 3 allocated to UAV 2
+--- Task 4 ---
+UAV 1 -> Throughput: 2.12 Mbps, Distance: 100.00 m, Delay: 266.49 s, Utility: -inf
+UAV 2 -> Insufficient CPU capacity
+UAV 3 -> Insufficient battery
+UAV 4 -> Throughput: 1.02 Mbps, Distance: 111.80 m, Delay: 552.15 s, Utility: -inf
+UAV 5 -> Insufficient battery
+
+Task 4 could not be allocated because no feasible UAV was available.
+--- Task 5 ---
+UAV 1 -> Throughput: 2.12 Mbps, Distance: 100.00 m, Delay: 199.49 s, Utility: 0.6945
+UAV 2 -> Insufficient CPU capacity
+UAV 3 -> Insufficient battery
+UAV 4 -> Throughput: 1.02 Mbps, Distance: 111.80 m, Delay: 411.44 s, Utility: -inf
+UAV 5 -> Insufficient battery
+UAV 1 -> Energy used: 105.8471 J, Remaining battery: 79.42%
+
+Task 5 allocated to UAV 1
+--- Task 6 ---
+UAV 1 -> Throughput: 2.12 Mbps, Distance: 100.00 m, Delay: 61.58 s, Utility: 1.1848
+UAV 2 -> Throughput: 3.00 Mbps, Distance: 53.85 m, Delay: 44.04 s, Utility: 1.7480
+UAV 3 -> Throughput: 0.16 Mbps, Distance: 162.79 m, Delay: 795.78 s, Utility: -inf
+UAV 4 -> Throughput: 1.02 Mbps, Distance: 111.80 m, Delay: 126.76 s, Utility: 0.4131
+UAV 5 -> Insufficient battery
+UAV 2 -> Energy used: 19.8844 J, Remaining battery: 58.79%
+
+Task 6 allocated to UAV 2
+--- Task 7 ---
+UAV 1 -> Throughput: 2.12 Mbps, Distance: 100.00 m, Delay: 265.10 s, Utility: 1.1051
+UAV 2 -> Throughput: 3.00 Mbps, Distance: 53.85 m, Delay: 187.31 s, Utility: 1.9097
+UAV 3 -> Insufficient battery
+UAV 4 -> Throughput: 1.02 Mbps, Distance: 111.80 m, Delay: 551.00 s, Utility: -0.2685
+UAV 5 -> Insufficient battery
+UAV 2 -> Energy used: 76.2637 J, Remaining battery: 51.16%
+
+Task 7 allocated to UAV 2
+--- Task 8 ---
+UAV 1 -> Throughput: 2.12 Mbps, Distance: 100.00 m, Delay: 74.10 s, Utility: 1.3982
+UAV 2 -> Insufficient CPU capacity
+UAV 3 -> Throughput: 0.16 Mbps, Distance: 162.79 m, Delay: 946.35 s, Utility: -inf
+UAV 4 -> Throughput: 1.02 Mbps, Distance: 111.80 m, Delay: 151.34 s, Utility: 0.4493
+UAV 5 -> Insufficient battery
+UAV 1 -> Energy used: 41.6988 J, Remaining battery: 75.25%
+
+Task 8 allocated to UAV 1
+--- Task 9 ---
+UAV 1 -> Throughput: 2.12 Mbps, Distance: 100.00 m, Delay: 295.60 s, Utility: 1.0821
+UAV 2 -> Insufficient CPU capacity
+UAV 3 -> Insufficient battery
+UAV 4 -> Throughput: 1.02 Mbps, Distance: 111.80 m, Delay: 614.14 s, Utility: -0.3296
+UAV 5 -> Insufficient battery
+UAV 1 -> Energy used: 149.7073 J, Remaining battery: 60.27%
+
+Task 9 allocated to UAV 1
+--- Task 10 ---
+UAV 1 -> Throughput: 2.12 Mbps, Distance: 100.00 m, Delay: 225.17 s, Utility: 0.9462
+UAV 2 -> Insufficient CPU capacity
+UAV 3 -> Insufficient battery
+UAV 4 -> Throughput: 1.02 Mbps, Distance: 111.80 m, Delay: 465.86 s, Utility: -0.1441
+UAV 5 -> Insufficient battery
+UAV 1 -> Energy used: 117.1807 J, Remaining battery: 48.56%
+
+Task 10 allocated to UAV 1
+Traceback (most recent call last):
+  File "c:\Users\Siddhartha Maurya\OneDrive\Desktop\UAV_Resource_Allocation\main.py", line 160, in <module>
+    main()
+    ~~~~^^
+  File "c:\Users\Siddhartha Maurya\OneDrive\Desktop\UAV_Resource_Allocation\main.py", line 112, in main
+    writer.writeheader()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\Python313\Lib\csv.py", line 215, in writeheader
+    return self.writerow(header)
+           ~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Program Files\Python313\Lib\csv.py", line 226, in writerow
+    return self.writer.writerow(self._dict_to_list(rowdict))
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: I/O operation on closed file.
+PS C:\Users\Siddhartha Maurya\OneDrive\Desktop\UAV_Resource_Allocation> python -u "c:\Users\Siddhartha Maurya\OneDrive\Desktop\UAV_Resource_Allocation\main.py"
+====== UAV NETWORK ======
+UAV: 1
+position: (100, 200)
+battery: 90%
+cpu: 2.5 GHz 
+Bandwidth : 10 MHz
+
+UAV: 2
+position: (250, 180)
+battery: 75%
+cpu: 2.0 GHz 
+Bandwidth : 8 MHz
+
+UAV: 3
+position: (320, 90)
+battery: 60%
+cpu: 1.8 GHz 
+Bandwidth : 12 MHz
+
+UAV: 4
+position: (150, 300)
+battery: 95%
+cpu: 3.0 GHz 
+Bandwidth : 20 MHz
+
+UAV: 5
+position: (400, 250)
+battery: 50%
+cpu: 1.5 GHz 
+Bandwidth : 6 MHz
+
+
+====== TAKS ALLOCATION ======
+
+--- Task 1 ---
+UAV 1 -> Throughput: 2.12 Mbps, Distance: 100.00 m, Delay: 254.87 s, Utility: -inf
+UAV 2 -> Throughput: 3.00 Mbps, Distance: 53.85 m, Delay: 180.70 s, Utility: 1.4910
+UAV 3 -> Insufficient battery
+UAV 4 -> Throughput: 1.02 Mbps, Distance: 111.80 m, Delay: 528.32 s, Utility: -inf
+UAV 5 -> Insufficient battery
+UAV 2 -> Energy used: 75.8224 J, Remaining battery: 67.42%
+
+Task 1 allocated to UAV 2
+--- Task 2 ---
+UAV 1 -> Throughput: 2.12 Mbps, Distance: 100.00 m, Delay: 287.18 s, Utility: 1.0440
+UAV 2 -> Throughput: 3.00 Mbps, Distance: 53.85 m, Delay: 204.62 s, Utility: 1.8635
+UAV 3 -> Insufficient battery
+UAV 4 -> Throughput: 1.02 Mbps, Distance: 111.80 m, Delay: 592.97 s, Utility: -inf
+UAV 5 -> Insufficient battery
+UAV 2 -> Energy used: 89.5701 J, Remaining battery: 58.46%
+
+Task 2 allocated to UAV 2
+--- Task 3 ---
+UAV 1 -> Throughput: 2.12 Mbps, Distance: 100.00 m, Delay: 278.39 s, Utility: 0.9241
+UAV 2 -> Insufficient CPU capacity
+UAV 3 -> Insufficient battery
+UAV 4 -> Throughput: 1.02 Mbps, Distance: 111.80 m, Delay: 576.22 s, Utility: -0.2109
+UAV 5 -> Insufficient battery
+UAV 1 -> Energy used: 144.4526 J, Remaining battery: 75.55%
+
+Task 3 allocated to UAV 1
+--- Task 4 ---
+UAV 1 -> Throughput: 2.12 Mbps, Distance: 100.00 m, Delay: 358.06 s, Utility: -inf
+UAV 2 -> Insufficient CPU capacity
+UAV 3 -> Insufficient battery
+UAV 4 -> Throughput: 1.02 Mbps, Distance: 111.80 m, Delay: 741.64 s, Utility: -inf
+UAV 5 -> Insufficient battery
+
+Task 4 could not be allocated because no feasible UAV was available.
+--- Task 5 ---
+UAV 1 -> Throughput: 2.12 Mbps, Distance: 100.00 m, Delay: 208.58 s, Utility: 0.9931
+UAV 2 -> Throughput: 3.00 Mbps, Distance: 53.85 m, Delay: 147.53 s, Utility: 1.6341
+UAV 3 -> Insufficient battery
+UAV 4 -> Throughput: 1.02 Mbps, Distance: 111.80 m, Delay: 433.16 s, Utility: -0.0491
+UAV 5 -> Insufficient battery
+UAV 2 -> Energy used: 60.6357 J, Remaining battery: 52.40%
+
+Task 5 allocated to UAV 2
+--- Task 6 ---
+UAV 1 -> Throughput: 2.12 Mbps, Distance: 100.00 m, Delay: 190.19 s, Utility: 1.1669
+UAV 2 -> Throughput: 3.00 Mbps, Distance: 53.85 m, Delay: 134.84 s, Utility: 1.9390
+UAV 3 -> Insufficient battery
+UAV 4 -> Throughput: 1.02 Mbps, Distance: 111.80 m, Delay: 394.27 s, Utility: -inf
+UAV 5 -> Insufficient battery
+UAV 2 -> Energy used: 56.5633 J, Remaining battery: 46.74%
+
+Task 6 allocated to UAV 2
+--- Task 7 ---
+UAV 1 -> Throughput: 2.12 Mbps, Distance: 100.00 m, Delay: 41.70 s, Utility: 0.9581
+UAV 2 -> Insufficient CPU capacity
+UAV 3 -> Throughput: 0.16 Mbps, Distance: 162.79 m, Delay: 501.84 s, Utility: -0.3273
+UAV 4 -> Throughput: 1.02 Mbps, Distance: 111.80 m, Delay: 81.91 s, Utility: 0.3725
+UAV 5 -> Insufficient battery
+UAV 1 -> Energy used: 28.7096 J, Remaining battery: 72.68%
+
+Task 7 allocated to UAV 1
+--- Task 8 ---
+UAV 1 -> Throughput: 2.12 Mbps, Distance: 100.00 m, Delay: 343.09 s, Utility: 0.8933
+UAV 2 -> Insufficient CPU capacity
+UAV 3 -> Insufficient battery
+UAV 4 -> Throughput: 1.02 Mbps, Distance: 111.80 m, Delay: 710.30 s, Utility: -inf
+UAV 5 -> Insufficient battery
+UAV 1 -> Energy used: 177.7684 J, Remaining battery: 54.91%
+
+Task 8 allocated to UAV 1
+--- Task 9 ---
+UAV 1 -> Insufficient CPU capacity
+UAV 2 -> Insufficient CPU capacity
+UAV 3 -> Throughput: 0.16 Mbps, Distance: 162.79 m, Delay: 1593.48 s, Utility: -inf
+UAV 4 -> Throughput: 1.02 Mbps, Distance: 111.80 m, Delay: 254.66 s, Utility: 0.2393
+UAV 5 -> Insufficient battery
+UAV 4 -> Energy used: 160.0825 J, Remaining battery: 78.99%
+
+Task 9 allocated to UAV 4
+--- Task 10 ---
+UAV 1 -> Insufficient CPU capacity
+UAV 2 -> Insufficient CPU capacity
+UAV 3 -> Insufficient battery
+UAV 4 -> Throughput: 1.02 Mbps, Distance: 111.80 m, Delay: 669.28 s, Utility: -0.4450
+UAV 5 -> Insufficient battery
+UAV 4 -> Energy used: 403.7104 J, Remaining battery: 38.62%
+
+Task 10 allocated to UAV 4
+Traceback (most recent call last):
+  File "c:\Users\Siddhartha Maurya\OneDrive\Desktop\UAV_Resource_Allocation\main.py", line 160, in <module>
+    main()
+    ~~~~^^
+  File "c:\Users\Siddhartha Maurya\OneDrive\Desktop\UAV_Resource_Allocation\main.py", line 112, in main
+    writer.writeheader()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Program Files\Python313\Lib\csv.py", line 215, in writeheader
+    return self.writerow(header)
+           ~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Program Files\Python313\Lib\csv.py", line 226, in writerow
+    return self.writer.writerow(self._dict_to_list(rowdict))
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: I/O operation on closed file.

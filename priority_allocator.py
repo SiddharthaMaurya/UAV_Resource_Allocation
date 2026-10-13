@@ -1,7 +1,19 @@
 import math
 
+import task
+
 
 class PriorityAllocator:
+
+    def can_handle_task(self ,uav ,task):
+        available_time = 10
+
+        max_capaity = uav.cpu * 1_000_000_000 * available_time
+
+        if uav.current_load + task.cpu_cycles <= max_capaity:
+            return True
+        
+        return False
 
     def calculate_transmission_delay(self, task , throughput):
 
@@ -13,12 +25,37 @@ class PriorityAllocator:
         return delay
 
     def calculate_computation_delay(self, task , uav):
-        cpu_frequency = uav.cpu * 1000 #GHz to MHz 
+        cpu_frequency = uav.cpu * 1_000_000_000 #GHz to MHz 
 
         delay = task.cpu_cycles / cpu_frequency
 
         return delay
 
+
+    def calculate_energy(self, task, uav):
+
+        # Transmission energy
+        distance = self.calculate_distance(uav, 200, 200)
+        throughput = self.calculate_throughput(uav, distance)
+    
+        transmission_delay = self.calculate_transmission_delay(
+            task, throughput
+        )
+    
+        transmission_energy = (
+            uav.transmit_power * transmission_delay
+        )
+    
+        # Computation energy
+        computation_energy = (
+            task.cpu_cycles * 1e-9
+        )
+    
+        total_energy = (
+            transmission_energy + computation_energy
+        )
+    
+        return total_energy
 
     def calculate_delay(self, task, uav, throughput):
 
@@ -84,17 +121,37 @@ class PriorityAllocator:
         if delay > task.deadline:
             return float("-inf")
 
-        #weights for throughput and delay
-        w1 = 0.7
-        w2 = 0.3
+        w1 = 0.6
+        w2 = 0.2
+        w3 = 0.2
 
-        #maximum acceptable delay
+
+        priority_weight = {
+            "High": 1.2,
+            "Medium": 1.0,
+            "Low": 0.8
+        }
+        
+        priority_factor = priority_weight[task.priority]
+        priority_weight = {
+            "High": 1.2,
+            "Medium": 1.0,
+            "Low": 0.8
+        }
+
+        priority_factor = priority_weight[task.priority]
+        
+        energy = self.calculate_energy(task, uav)
+        
         max_delay = task.deadline
-
-
-        # Temporary utility
-        utility = (w1 * throughput - w2 * (delay / max_delay))
-
+        max_energy = 100
+        
+        utility = (
+            w1 * throughput
+            - w2 * (delay / max_delay)
+            - w3 * (energy / max_energy)
+        ) * priority_factor
+        
         return utility
 
     def allocate(self, uavs , task):
@@ -103,9 +160,37 @@ class PriorityAllocator:
         user_y = 200
 
         best_uav = None
-        best_utility = 0
+        best_utility = float("-inf")
 
         for uav in uavs:
+
+            if uav.battery <= 0:
+                print(f"UAV {uav.id} -> Insufficient battery")
+                continue
+        
+            if not self.can_handle_task(uav, task):
+                print(f"UAV {uav.id} -> Insufficient CPU capacity")
+                continue
+
+            energy_required = self.calculate_energy(task, uav)
+
+            battery_capacity = 1000.0
+            battery_required_percent = (energy_required / battery_capacity) * 100
+        
+            if uav.battery < battery_required_percent:
+                print(f"UAV {uav.id} -> Insufficient battery")
+                continue
+
+
+        
+            if not self.can_handle_task(uav, task):
+
+                print(
+                    f"UAV {uav.id} -> "
+                    f"Insufficient CPU capacity"
+                )
+
+                continue
 
             distance = self.calculate_distance(
                 uav,
@@ -141,5 +226,22 @@ class PriorityAllocator:
             if utility > best_utility:
                 best_utility = utility
                 best_uav = uav
+
+        if best_uav is not None:
+            best_uav.current_load += task.cpu_cycles
+        
+            energy_used = self.calculate_energy(task, best_uav)
+        
+            battery_capacity = 1000.0
+            battery_used_percent = (energy_used / battery_capacity) * 100
+        
+            best_uav.battery -= battery_used_percent
+
+            print(
+                f"UAV {best_uav.id} -> "
+                f"Energy used: {energy_used:.4f} J, "
+                f"Remaining battery: {best_uav.battery:.2f}%"
+            )
+
 
         return best_uav

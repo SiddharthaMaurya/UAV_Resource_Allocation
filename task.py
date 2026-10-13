@@ -14,7 +14,7 @@ class Task:
             task = Task(
                 task_id=i + 1,
                 size_mb=random.randint(10, 100),
-                cpu_cycles=random.randint(1000, 10000),
+                cpu_cycles=random.randint(int(1e9), int(10e9)),
                 priority=random.choice(priorities),
                 deadline=random.randint(100, 1000)
             )
@@ -33,7 +33,7 @@ class Task:
     def display(self):
         print(f"Task ID: {self.task_id}")
         print(f"Size (MB): {self.size_mb}")
-        print(f"CPU Cycles: {self.cpu_cycles}")
+        print(f"CPU Cycles: {self.cpu_cycles:.2e}")
         print(f"Priority: {self.priority}")
         print(f"Deadline: {self.deadline}")
 
